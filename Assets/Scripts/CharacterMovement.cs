@@ -35,7 +35,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         // Are you pressing  ALT to run
-        isRunning = Input.GetButton("Fire1");
+        isRunning = Input.GetButton("Run");
 
         // Handle JUMPING mechanic TODO modify to see what it does.
         if (Input.GetButtonDown("Jump") && isGrounded) 
@@ -97,7 +97,7 @@ public class CharacterMovement : MonoBehaviour
             return 0.5f;
         }
         else 
-         {
+        {
             return 0f;
         }
     }

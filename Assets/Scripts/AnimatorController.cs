@@ -11,12 +11,12 @@ public class AnimatorController : MonoBehaviour
         animator = GetComponent<Animator>();
         movement = GetComponent<CharacterMovement>();
     }
-  public void LateUpdate()
+    public void LateUpdate()
     {
        UpdateAnimator();
     }
 
-
+    // TODO Fill this in with your animator calls
     void UpdateAnimator()
     {
         

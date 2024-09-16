@@ -23,16 +23,6 @@ public class CharacterMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
-
-    public void Update()
-    {
-        if (animator.applyRootMotion == false)
-        {
-            ProcessMovement();
-        }
-        ProcessGravity();
-
-    }
   
 
     void ProcessMovement()
@@ -52,11 +42,21 @@ public class CharacterMovement : MonoBehaviour
         {
             playerVelocity.y +=  Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
-
+        // Moves the player
         controller.Move(move * Time.deltaTime *((isRunning)?runSpeed:walkSpeed));
     }
 
-    // DONT MODIFY 
+    // DONT MODIFY -------------------------------------------------------
+    public void Update()
+    {
+        if (animator.applyRootMotion == false)
+        {
+            ProcessMovement();
+        }
+        ProcessGravity();
+
+    }
+
     public void ProcessGravity()
     {
  
@@ -101,5 +101,6 @@ public class CharacterMovement : MonoBehaviour
             return 0f;
         }
     }
+    // ---------------------------------------------------------------------------
 
 }
